@@ -15,21 +15,24 @@ public class SingleChoooiceListView {
     private Context context;
     private String[] textResource;
     private Integer[] imageResource;
+    private int position;
     private String title;
 
-    public SingleChoooiceListView(Activity activity, Context context, String[] textResource, Integer[] imageResource){
+    public SingleChoooiceListView(Activity activity, Context context, String[] textResource, Integer[] imageResource, int position){
         this.activity = activity;
         this.context = context;
         this.textResource = textResource;
         this.imageResource = imageResource;
+        this.position = position;
         this.title = "Choose One";
     }
 
-    public SingleChoooiceListView(Activity activity, Context context, String[] textResource, Integer[] imageResource, String title){
+    public SingleChoooiceListView(Activity activity, Context context, String[] textResource, Integer[] imageResource, int position, String title){
         this.activity = activity;
         this.context = context;
         this.textResource = textResource;
         this.imageResource = imageResource;
+        this.position = position;
         this.title = title;
     }
 
@@ -41,6 +44,7 @@ public class SingleChoooiceListView {
         View dialogView = activity.getLayoutInflater().inflate(R.layout.dialog_main, null);
         final ListView simpleListView = (ListView)dialogView.findViewById(R.id.simpleListView);
         simpleListView.setAdapter(adapter);
+        simpleListView.setItemChecked(position,true);
 
         //Create an instance of AlertDialog
         AlertDialog.Builder dialog = new AlertDialog.Builder(context);
@@ -57,5 +61,6 @@ public class SingleChoooiceListView {
         //Set up ListView
         parentListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         parentListView.setAdapter(adapter);
+        parentListView.setItemChecked(position,true);
     }
 }

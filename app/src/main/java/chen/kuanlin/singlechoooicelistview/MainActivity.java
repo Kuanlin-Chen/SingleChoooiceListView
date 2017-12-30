@@ -2,6 +2,7 @@ package chen.kuanlin.singlechoooicelistview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView listView = (ListView)findViewById(R.id.listview_main);
-        SingleChoooiceListView singleChoooiceListView = new SingleChoooiceListView(MainActivity.this, MainActivity.this, textResource, imageResource);
+        SingleChoooiceListView singleChoooiceListView = new SingleChoooiceListView(MainActivity.this, MainActivity.this, textResource, imageResource,0);
         singleChoooiceListView.showListView(listView);
 
         /*
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         button_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SingleChoooiceListView singleChoooiceListView = new SingleChoooiceListView(MainActivity.this, MainActivity.this, textResource, imageResource);
+                SingleChoooiceListView singleChoooiceListView = new SingleChoooiceListView(MainActivity.this, MainActivity.this, textResource, imageResource,1);
                 singleChoooiceListView.showDialog();
             }
         });*/
