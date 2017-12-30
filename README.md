@@ -16,7 +16,7 @@ Then add a library dependency in app/build.gradle
 
 ```
 dependencies {
-    compile 'com.github.Kuanlin-Chen:SingleChoooiceListView:1.0'
+    compile 'com.github.Kuanlin-Chen:SingleChoooiceListView:2.0'
 }
 ```
 
@@ -25,6 +25,7 @@ dependencies {
 ```
 private String[] textResource = new String[]{"A","B","C"};
 private Integer[] imageResource = new Integer[]{R.drawable.a,R.drawable.b,R.drawable.c};
+private int defaultItem = 0;
 ```
 
 Show in Dialog
@@ -36,7 +37,7 @@ Button button_main = (Button)findViewById(R.id.button_main);
 button_main.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        SingleChoooiceListView singleChoooiceListView = new SingleChoooiceListView(MainActivity.this, MainActivity.this, textResource, imageResource);
+        SingleChoooiceListView singleChoooiceListView = new SingleChoooiceListView(MainActivity.this, MainActivity.this, textResource, imageResource, defaultItem);
         singleChoooiceListView.showDialog();
     }
 });;
@@ -49,6 +50,6 @@ Show in ListView
 
 ```
 ListView listView = (ListView)findViewById(R.id.listview_main);
-SingleChoooiceListView singleChoooiceListView = new SingleChoooiceListView(MainActivity.this, MainActivity.this, textResource, imageResource);
+SingleChoooiceListView singleChoooiceListView = new SingleChoooiceListView(MainActivity.this, MainActivity.this, textResource, imageResource, defaultItem);
 singleChoooiceListView.showListView(listView);
 ```
