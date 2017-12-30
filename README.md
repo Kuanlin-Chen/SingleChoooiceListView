@@ -29,6 +29,8 @@ private Integer[] imageResource = new Integer[]{R.drawable.a,R.drawable.b,R.draw
 
 Show in Dialog
 
+![Alt text](https://github.com/Kuanlin-Chen/SingleChoooiceListView/blob/master/library/src/main/res/drawable/showindialog.png?raw=true "Show in Dialog")
+
 ```
 Button button_main = (Button)findViewById(R.id.button_main);
 button_main.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +43,9 @@ button_main.setOnClickListener(new View.OnClickListener() {
 ```
 
 Show in ListView
+
+![Alt text](https://github.com/Kuanlin-Chen/SingleChoooiceListView/blob/master/library/src/main/res/drawable/showinlistview.png?raw=true "Show in ListView")
+
 
 ```
 ListView listView = (ListView)findViewById(R.id.listview_main);
